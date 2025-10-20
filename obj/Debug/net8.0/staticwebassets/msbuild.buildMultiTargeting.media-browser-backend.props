@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/media-browser-backend.props" />
+</Project>

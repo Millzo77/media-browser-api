@@ -1,0 +1,6 @@
+@media_browser_backend_HostAddress = http://localhost:5115
+
+Get {{media_browser_backend_HostAddress}}/movie/search?Test
+Accept: application/json
+
+###
