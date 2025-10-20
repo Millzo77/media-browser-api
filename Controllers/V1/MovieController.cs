@@ -1,7 +1,9 @@
+using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 // Controllers/MovieController.cs
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/v{version:apiVersion}/[controller]")]
+[ApiVersion("1.0")]
 public class MovieController : ControllerBase {
     private readonly MovieService _movieService;
 

@@ -5,6 +5,10 @@
 /mnt/qnap-dev/dotnet/media-browser-backend/bin/Debug/net8.0/media-browser-backend.runtimeconfig.json
 /mnt/qnap-dev/dotnet/media-browser-backend/bin/Debug/net8.0/media-browser-backend.dll
 /mnt/qnap-dev/dotnet/media-browser-backend/bin/Debug/net8.0/media-browser-backend.pdb
+/mnt/qnap-dev/dotnet/media-browser-backend/bin/Debug/net8.0/Asp.Versioning.Abstractions.dll
+/mnt/qnap-dev/dotnet/media-browser-backend/bin/Debug/net8.0/Asp.Versioning.Http.dll
+/mnt/qnap-dev/dotnet/media-browser-backend/bin/Debug/net8.0/Asp.Versioning.Mvc.dll
+/mnt/qnap-dev/dotnet/media-browser-backend/bin/Debug/net8.0/Asp.Versioning.Mvc.ApiExplorer.dll
 /mnt/qnap-dev/dotnet/media-browser-backend/bin/Debug/net8.0/Azure.Core.dll
 /mnt/qnap-dev/dotnet/media-browser-backend/bin/Debug/net8.0/Azure.Identity.dll
 /mnt/qnap-dev/dotnet/media-browser-backend/bin/Debug/net8.0/Humanizer.dll
@@ -163,6 +167,7 @@
 /mnt/qnap-dev/dotnet/media-browser-backend/obj/Debug/net8.0/media-browser-backend.csproj.CoreCompileInputs.cache
 /mnt/qnap-dev/dotnet/media-browser-backend/obj/Debug/net8.0/media-browser-backend.MvcApplicationPartsAssemblyInfo.cs
 /mnt/qnap-dev/dotnet/media-browser-backend/obj/Debug/net8.0/media-browser-backend.MvcApplicationPartsAssemblyInfo.cache
+/mnt/qnap-dev/dotnet/media-browser-backend/obj/Debug/net8.0/media-browser-backend.sourcelink.json
 /mnt/qnap-dev/dotnet/media-browser-backend/obj/Debug/net8.0/staticwebassets.build.json
 /mnt/qnap-dev/dotnet/media-browser-backend/obj/Debug/net8.0/staticwebassets.development.json
 /mnt/qnap-dev/dotnet/media-browser-backend/obj/Debug/net8.0/staticwebassets/msbuild.media-browser-backend.Microsoft.AspNetCore.StaticWebAssets.props

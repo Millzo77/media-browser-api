@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "/Ros6VNNg36RiIbiATeHPLxgNQAK3165f9FA/5ixdbfq7ckGJzWpuPNi+AYyCPgAhWfQUvo2C/p+fH+z+2xktg==",
+  "dgSpecHash": "cTnO6D4ZRcaYpWTesZF8oMwBxrhx64vqbXY47cZq1wmC/boxp6C88hw6x0M6nFE+7/zMnaQH5jHjXEfGBTIR0w==",
   "success": true,
   "projectFilePath": "/mnt/qnap-dev/dotnet/media-browser-backend/media-browser-backend.csproj",
   "expectedPackageFiles": [
+    "/home/millzo/.nuget/packages/asp.versioning.abstractions/8.0.0/asp.versioning.abstractions.8.0.0.nupkg.sha512",
+    "/home/millzo/.nuget/packages/asp.versioning.http/8.0.0/asp.versioning.http.8.0.0.nupkg.sha512",
+    "/home/millzo/.nuget/packages/asp.versioning.mvc/8.0.0/asp.versioning.mvc.8.0.0.nupkg.sha512",
+    "/home/millzo/.nuget/packages/asp.versioning.mvc.apiexplorer/8.0.0/asp.versioning.mvc.apiexplorer.8.0.0.nupkg.sha512",
     "/home/millzo/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/home/millzo/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
     "/home/millzo/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",

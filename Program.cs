@@ -2,25 +2,44 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Asp.Versioning;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// 1. Core API services
 builder.Services.AddControllers();
-builder.Services.AddHttpClient<MovieService>();
+builder.Services.AddRouting(options => { options.LowercaseUrls = true; });
+
+// 2. API Documentation
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddRouting(options =>
+
+// 3. API Versioning
+builder.Services.AddApiVersioning(options =>
 {
-    options.LowercaseUrls = true;
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.ReportApiVersions = true; // Returns supported versions in response headers
+
+    // Choose your versioning strategy (pick one or combine):
+    options.ApiVersionReader = ApiVersionReader.Combine(
+        new UrlSegmentApiVersionReader(),           // /api/v1/products
+        new HeaderApiVersionReader("X-Api-Version"), // Header: X-Api-Version: 1.0
+        new QueryStringApiVersionReader("api-version") // ?api-version=1.0
+    );
+}).AddApiExplorer(options =>
+{
+    options.GroupNameFormat = "'v'VVV"; // Format: v1, v2, v3
+    options.SubstituteApiVersionInUrl = true;
 });
 
-// Database
+// 4. Database
 builder.Services.AddDbContext<MediaBrowserDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("MediaBrowserDB"),
     new MySqlServerVersion(new Version(8, 0, 43)))
 );
 
-//Authentication Scheme
+// 5. Authentication/Authorization
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -37,29 +56,28 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-// Dependency Injection For Services
+// 6. Services/Dependencies
 builder.Services.AddScoped<IAuthService, AuthService>();
+
+// 7. Http Clients
+builder.Services.AddHttpClient<MovieService>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-// Configure the HTTP request pipeline
 app.UseHttpsRedirection();
-
-// app.UseCors("AllowFrontend"); // Apply CORS policy
-
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
 
+// app.UseCors("AllowFrontend"); // Apply CORS policy
 
 // Optional: Enable CORS if your Next.js frontend is on a different domain
 // builder.Services.AddCors(options =>

@@ -7,9 +7,11 @@ using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Asp.Versioning;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/v{version:apiVersion}/[controller]")]
+[ApiVersion("1.0")]
 public class AuthController(IAuthService authService) : ControllerBase
 {
     public static User user = new();
