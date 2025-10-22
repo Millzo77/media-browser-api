@@ -35,9 +35,10 @@ public class AuthService(MediaBrowserDbContext context, IConfiguration config) :
         };
     }
 
-    public async Task<User?> RegisterAsync(UserDto request)
+    public async Task<RegisterResponseDto?> RegisterAsync(UserDto request)
     {
-        if (await context.Users.AnyAsync(u => u.Username == request.Username))
+        if (request.Username.Length <= 1 || request.Password.Length <= 1 ||
+            await context.Users.AnyAsync(u => u.Username == request.Username))
         {
             return null;
         }
@@ -48,11 +49,19 @@ public class AuthService(MediaBrowserDbContext context, IConfiguration config) :
 
         user.Username = request.Username;
         user.PasswordHash = hashedPassword;
+        user.CreatedOn = DateTime.UtcNow;
 
         context.Users.Add(user);
         await context.SaveChangesAsync();
 
-        return user;
+        var response = new RegisterResponseDto
+        {
+            Id = user.Id,
+            Username = user.Username,
+            CreatedOn = user.CreatedOn
+        };
+
+        return response;
     }
 
     private async Task<User?> ValidateRefreshTokenAsync(Guid userId, string refreshToken)

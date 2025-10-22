@@ -17,16 +17,16 @@ public class AuthController(IAuthService authService) : ControllerBase
     public static User user = new();
 
     [HttpPost("register")]
-    public async Task<ActionResult<User>> Register(UserDto request)
+    public async Task<ActionResult<RegisterResponseDto>> Register(UserDto request)
     {
-        var user = await authService.RegisterAsync(request);
+        var response = await authService.RegisterAsync(request);
 
-        if(user is null)
+        if (response is null)
         {
             return BadRequest("Username already exists.");
         }
 
-        return Ok(user);
+        return Ok(response);
     }
 
     [HttpPost("login")]
