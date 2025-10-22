@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("media-browser-backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9c3a05a79efa533d60b2b02a60063379be4b9f2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a70c61466b92814fff41fb5ee6007f2173f1d94d")]
 [assembly: System.Reflection.AssemblyProductAttribute("media-browser-backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("media-browser-backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

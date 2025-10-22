@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "zVn+nwIfUNHcG2Ox0CNGO+u1srqBz+Ix6/4C9xmZxy4=",
+  "Source": "media-browser-backend.Api",
+  "BasePath": "_content/media-browser-backend.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
